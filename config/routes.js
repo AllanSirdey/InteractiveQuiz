@@ -39,7 +39,14 @@ module.exports.routes = {
   'get /login': { view: 'user/login' },
   'get /signup': { view: 'user/signup' },
     
-  'get /message': {view: 'message/index'}
+  'get /message':{
+      controller:'MessageController',
+      action:'getMessage'
+  },
+    
+  '/message/new':{
+      view:'message/new'
+  }
 
   /***************************************************************************
   *                                                                          *

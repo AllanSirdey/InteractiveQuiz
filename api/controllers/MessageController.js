@@ -6,6 +6,10 @@
  */
 
 module.exports = {
-	
+	getMessage: function(req, res) {
+        Message.find({}, function(err, found){
+                res.view( 'message/messages', {messages: found} );
+        });
+    }
 };
 

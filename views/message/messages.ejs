@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Messages</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <h1>Les Messages</h1>
+    
+    <table>
+        <th>Content</th>
+        <th>Source</th>
+        <% messages.forEach(function(msg){ %>
+            <tr>
+                <td><%= msg.content %></td>
+                <td><%= msg.source %></td>
+                <td><%= msg.source %></td>
+                <td><a href="/message/<%=msg.id%>">Edit</a></td>
+                <td><a methodlink="">Delete</a></td>
+            </tr>
+        <% }); %>
+    </table>
+    
+    <a href="/message/new">Nouveau</a>
+</body>
+
+</html>
