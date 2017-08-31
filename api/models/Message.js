@@ -8,12 +8,32 @@
 module.exports = {
 
   attributes: {
-      content:{
-          type:'string'
-      },
       source:{
           type:'string'
+      },
+      prenomnom:{
+          type:'string'
+      },
+      imgUser:{
+          type:'string'
+      },
+      imgUserBackground:{
+          type:'string'
+      },
+      texteFront:{
+          type:'string'
+      },
+      img:{
+          type:'string'
+      },
+      numero:{
+          type:'string'
+      },
+      show:{
+          type:'boolean'
+      },
+      survey_id:{
+          type:'integer'
       }
   }
 };
-
