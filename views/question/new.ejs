@@ -1,0 +1,20 @@
+
+    <h1>Create new question</h1>
+
+    
+    <%= id %>
+
+    <form method="post" action="/questions">
+       <input type="hidden" name="id_quiz" value="<%= id %>">
+        <label>Question: </label><input type="text" name="question">
+        <br><br>
+        <label>Correct answer: </label><input type="text" name="correct_answer">
+        <br><br>
+        <label>Answer1: </label><input type="text" name="answer1">
+        <br><br>
+        <label>Answer2: </label><input type="text" name="answer2">
+        <br><br>
+        <label>Answer3: </label><input type="text" name="answer3">
+        <br><br>
+        <input type="submit" value="submit">
+    </form>

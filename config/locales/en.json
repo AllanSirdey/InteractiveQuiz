@@ -1,4 +1,10 @@
 {
 	"Welcome": "Welcome",
-	"A brand new app.": "A brand new app."
+	"A brand new app.": "A brand new app.",
+    "InteractiveQuiz": "",
+    "Home": "Home",
+    "Connect": "Connect",
+    "StartQuiz": "",
+    "Parameters": "",
+    "Challenges": ""
 }

@@ -1,0 +1,13 @@
+.quiz-list{
+    cursor: pointer;
+}
+
+.flag-img{
+    margin-right: 10px;
+}
+
+.w3-text-red :hover{
+    cursor: pointer;
+    background: #f44336!important;
+    color: white !important;
+}

@@ -1,0 +1,64 @@
+<h1>Details quiz</h1>
+
+
+<div class="w3-row-padding w3-grayscale">
+
+    <div class="w3-col m4 w3-margin-bottom quiz-list">
+        <div class="w3-light-grey">
+            <div class="w3-container">
+                <h3><%= quiz.title %></h3>
+                <p class="w3-opacity">
+                    <%= quiz.author %>
+                </p>
+                <p>
+                    <%= quiz.description %>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!--<p><%- JSON.stringify(quiz) %></p>-->
+
+    <div class="w3-col m12 w3-margin-bottom">
+        <table class="table table-bordered">
+            <th>Question</th>
+            <th>Answer 1</th>
+            <th>Answer 2</th>
+            <th>Answer 3</th>
+            <th>Answer 4</th>
+            <th>Delete</th>
+            <% quiz.questions.forEach(function(q) { %>
+                <tr>
+                    <td>
+                        <%= q.question %>
+                    </td>
+                    <td>
+                        <%= q.correct_answer %>
+                    </td>
+                    <td>
+                        <%= q.answer1 %>
+                    </td>
+                    <td>
+                        <%= q.answer2 %>
+                    </td>
+                    <td>
+                        <%= q.answer3 %>
+                    </td>
+                    <td>
+                        <button class="w3-button w3-red w3-padding-large w3-hover-black"                                                                 onclick="location.href='/questions/delete/<%= q.id %>'">
+                            Delete
+                        </button>
+                    </td>
+                </tr>
+                <% }); %>
+        </table>
+    </div>
+
+    <button class="w3-button w3-red w3-padding-large w3-hover-black" onclick="location.href='/question/new/<%= quiz.id %>'">Add question</button>
+
+    <br>
+    <br>
+
+    <button class="w3-button w3-red w3-padding-large w3-hover-black" onclick="location.href='/quiz/delete/<%= quiz.id %>'">Delete</button>
+
+</div>
