@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
     <style>
         body,
         h1,
@@ -27,18 +27,18 @@
         h5 {
             font-family: "Poppins", sans-serif
         }
-        
+
         body {
             font-size: 16px;
         }
-        
+
         .w3-half img {
             margin-bottom: -6px;
             margin-top: 16px;
             opacity: 0.8;
             cursor: pointer
         }
-        
+
         .w3-half img:hover {
             opacity: 1
         }
@@ -68,12 +68,7 @@
             <a href="#services" onclick="location.href='/quiz'" class="w3-bar-item w3-button w3-hover-white">Start quiz</a>
             <a href="#services" onclick="location.href='/quiz'" class="w3-bar-item w3-button w3-hover-white">Parameters</a>
             <a href="#services" onclick="changeColor()" class="w3-bar-item w3-button w3-hover-white">Change Color</a>
-            <div>
-                <img src="/images/flag-gb.png" alt="English" width="75" class="flag-img">
-                <img src="/images/flag-es.png" alt="Espanol" width="65" class="flag-img">
-                <img src="/images/flag-fr.png" alt="Francais" width="65" class="flag-img">
-            </div>
-            
+
         </div>
     </nav>
 
@@ -110,7 +105,7 @@
             document.getElementById("mySidebar").style.display = "none";
             document.getElementById("myOverlay").style.display = "none";
         }
-        
+
         function changeColor(){
             $(document).ready(function(){
                 $("nav").removeClass("w3-red");
