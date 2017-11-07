@@ -1,10 +1,27 @@
 {
   "Welcome": "Willkommen",
-  "A brand new app.": "Eine neue App.",
-    "InteractiveQuiz": "",
-    "Home": "Home",
-    "Connect": "Verbinden",
-    "StartQuiz": "",
-    "Parameters": "",
-    "Challenges": ""
+  "InteractiveQuiz": "",
+  "Home": "Home",
+  "Connect": "Verbinden",
+  "PlayQuiz": "",
+  "Parameters": "",
+  "Challenges": "",
+
+	"ChooseTheme": "",
+	"ChooseSize": "",
+	"ChooseLanguage": "",
+	"ThemeDescription": "",
+	"SizeDescription": "",
+	"LanguageDescription": "",
+
+	"Actual": "",
+
+	"BlueTheme": "",
+	"RedTheme": "",
+	"DarkTheme": "",
+	"LightTheme": "",
+
+	"SmallSize": "",
+	"NormalSize": "",
+	"BigSize": ""
 }

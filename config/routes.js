@@ -39,6 +39,7 @@ module.exports.routes = {
     'get /login': {
         view: 'user/login'
     },
+
     'get /signup': {
         view: 'user/signup'
     },
@@ -95,8 +96,13 @@ module.exports.routes = {
     'post /questions': {
         controller: 'QuestionsController',
         action: 'create'
-    }
+    },
 
+    /* PARAMETERS */
+
+    'get /parameters': {
+        view: 'parameters/parameters'
+    },
 
 
 

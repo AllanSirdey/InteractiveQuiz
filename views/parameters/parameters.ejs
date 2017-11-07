@@ -1,0 +1,60 @@
+<div class="w3-container" id="services" style="margin-top:25px">
+  <h1 class="w3-xxxlarge w3-text-red"><%= i18n('Parameters') %></h1>
+  <hr style="width:50px;border:5px solid red" class="w3-round">
+</div>
+
+<div class="w3-row-padding w3-grayscale">
+  <div class="w3-col m4 w3-margin-bottom">
+    <div class="w3-light-grey">
+      <div class="w3-container">
+        <h3><%= i18n('ChooseTheme') %></h3>
+        <p class="w3-opacity"><%= i18n('Actual') %>: </p>
+        <p><%= i18n('ThemeDescription') %>
+          <form action="/changeTheme">
+            <select>
+              <option value="blue"><%= i18n('BlueTheme') %></option>
+              <option value="red"><%= i18n('RedTheme') %></option>
+              <option value="dark"><%= i18n('DarkTheme') %></option>
+              <option value="light"><%= i18n('LightTheme') %></option>
+            </select>
+          </form>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="w3-col m4 w3-margin-bottom">
+    <div class="w3-light-grey">
+      <div class="w3-container">
+        <h3><%= i18n('ChooseSize') %></h3>
+        <p class="w3-opacity"><%= i18n('Actual') %>: </p>
+        <p><%= i18n('SizeDescription') %>
+          <form action="/changeSize">
+            <select>
+              <option value="small"><%= i18n('SmallSize') %></option>
+              <option value="normal"><%= i18n('NormalSize') %></option>
+              <option value="big"><%= i18n('BigSize') %></option>
+            </select>
+          </form>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="w3-col m4 w3-margin-bottom">
+    <div class="w3-light-grey">
+      <div class="w3-container">
+        <h3><%= i18n('ChooseLanguage') %></h3>
+        <p class="w3-opacity"><%= i18n('Actual') %>: </p>
+        <p><%= i18n('LanguageDescription') %>
+          <form action="/changeTheme">
+            <select>
+              <option value="fr">Francais</option>
+              <option value="en">English</option>
+              <option value="es">Español</option>
+              <option value="de">Deutsch</option>
+            </select>
+          </form>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

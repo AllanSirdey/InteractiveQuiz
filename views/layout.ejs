@@ -58,16 +58,16 @@
         <br>
         <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
         <div class="w3-container">
-            <h3 class="w3-padding-64">Interactive<br>Quiz</h3>
+            <h3 class="w3-padding-64"><%= i18n('Interactive') %><br>Quiz</h3>
         </div>
         <div class="w3-bar-block">
             <a href="#" onclick="location.href='/'" class="w3-bar-item w3-button w3-hover-white"><%= i18n('Home') %></a>
             <a href="#showcase" onclick="location.href='/account'" class="w3-bar-item w3-button w3-hover-white">
             <%= i18n('Connect') %>
             </a>
-            <a href="#services" onclick="location.href='/quiz'" class="w3-bar-item w3-button w3-hover-white" accesskey="s">Start quiz</a>
-            <a href="#services" onclick="location.href='/quiz'" class="w3-bar-item w3-button w3-hover-white">Parameters</a>
-            <a href="#" onclick="changeColor()" class="w3-bar-item w3-button w3-hover-white">Change Color</a>
+            <a href="#services" onclick="location.href='/quiz'" class="w3-bar-item w3-button w3-hover-white" accesskey="s"><%= i18n('PlayQuiz') %></a>
+            <a href="#services" onclick="location.href='/parameters'" class="w3-bar-item w3-button w3-hover-white"><%= i18n('Parameters') %></a>
+            <!--<a href="#" onclick="changeColor()" class="w3-bar-item w3-button w3-hover-white">Change Color</a>-->
 
         </div>
     </nav>
@@ -75,7 +75,7 @@
     <!-- Top menu on small screens -->
     <header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
         <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
-        <span>Interactive Quiz</span>
+        <span><%= i18n('Interactive') %> Quiz</span>
     </header>
 
     <!-- Overlay effect when opening sidebar on small screens -->
@@ -109,7 +109,7 @@
         function changeColor(){
             $(document).ready(function(){
                 $("nav").removeClass("w3-red");
-                $("nav").css("background-color", "#2196f3");
+                $("nav").css("background-color", "#3F51B5 ");
                 $("nav").css("color", "white");
             });
         }

@@ -1,10 +1,28 @@
 {
 	"Welcome": "Bienvenue",
-	"A brand new app.": "Une toute nouvelle application.",
-    "InteractiveQuiz": "",
-    "Home": "Home",
-    "Connect": "Se connecter",
-    "StartQuiz": "",
-    "Parameters": "",
-    "Challenges": ""
+  "Interactive": "Interactif",
+  "Home": "Home",
+  "Connect": "Se connecter",
+  "PlayQuiz": "Jouer",
+  "Parameters": "Paramètres",
+  "Challenges": "Challenges",
+
+	"ChooseTheme": "Choisir votre thème",
+	"ChooseSize": "Choisir votre taille",
+	"ChooseLanguage": "Choisir votre langue",
+	"ThemeDescription": "Selectionner votre thème préféré.",
+	"SizeDescription": "Vous pouvez choisir la taille du texte.",
+	"LanguageDescription": "Vous pouvez choisir votre langue préféré pour répondre au quizz.",
+
+	"Actual": "Actuelle",
+
+	"BlueTheme": "Bleu",
+	"RedTheme": "Rouge",
+	"DarkTheme": "Foncé",
+	"LightTheme": "Clair",
+
+	"SmallSize": "Petit",
+	"NormalSize": "Moyen",
+	"BigSize": "Grand"
+
 }
