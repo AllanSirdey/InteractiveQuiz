@@ -1,0 +1,96 @@
+<h1>Play quiz</h1>
+
+<div class="row" style="margin-top:25px;">
+  <div class="col-md-11 w3-red w3-padding-large w3-grayscale w3-xlarge">
+    <p id="question"></p>
+  </div>
+    <div class="col-md-1 w3-red w3-padding-large w3-grayscale w3-xlarge">
+      <p id="timeToAnswer"></p>
+    </div>
+</div>
+
+<br><br>
+
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-4">
+    <div class="answer">
+      Answer A
+    </div>
+  </div>
+
+  <div class="col-md-2"></div>
+  <div class="col-md-4">
+    <div class="answer">
+      Answer B
+    </div>
+  </div>
+  <div class="col-md-1"></div>
+</div>
+
+<br><br>
+
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-4">
+    <div class="answer">
+      Answer C
+    </div>
+  </div>
+
+  <div class="col-md-2"></div>
+  <div class="col-md-4">
+    <div class="answer">
+      Answer D
+    </div>
+  </div>
+  <div class="col-md-1"></div>
+</div>
+
+<script type="text/javascript">
+  $( document ).ready(function() {
+
+    var allQuestions = <%- JSON.stringify(quiz.questions) %>;
+    console.log(allQuestions);
+
+    var i = 0;
+    var nb_questions = allQuestions.length;
+
+    if(nb_questions > 0)
+    {
+      console.log("Question: " + allQuestions[i].question);
+      console.log("Correct answer: " + allQuestions[i].correct_answer);
+      console.log("Answer 1: " + allQuestions[i].answer1);
+      console.log("Answer 2: " + allQuestions[i].answer2);
+      console.log("Answer 3: " + allQuestions[i].answer3);
+
+      // timer answer the question
+      var timeToAnswer = 5;
+      var t = timeToAnswer;
+      setInterval(function(){
+        if(t == 0)
+          t = timeToAnswer;
+        $("#timeToAnswer").html(t + 's');
+        t--;
+      }, 1000);
+
+      $("#question").hide().html(allQuestions[i].question).fadeIn(1000);
+      i++;
+
+      setInterval(function(){
+        if (i<nb_questions){
+          console.log("Question: " + allQuestions[i].question);
+          console.log("Correct answer: " + allQuestions[i].correct_answer);
+          console.log("Answer 1: " + allQuestions[i].answer1);
+          console.log("Answer 2: " + allQuestions[i].answer2);
+          console.log("Answer 3: " + allQuestions[i].answer3);
+
+          $("#question").hide().html(allQuestions[i].question).fadeIn(1000);
+
+          i++;
+        }
+      }, (timeToAnswer+1)*1000);
+    }
+  });
+
+</script>

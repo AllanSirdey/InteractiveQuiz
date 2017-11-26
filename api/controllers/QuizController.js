@@ -23,7 +23,7 @@ module.exports = {
             });
         });
     },
-    
+
 	create: function(req, res) {
         Quiz.create(req.params.all(), function(err, todo){
             if (err) return res.serverError();
@@ -38,5 +38,15 @@ module.exports = {
             if (err) return res.serverError();
             return res.redirect('/quiz');
         });
+    },
+
+    play: function (req, res) {
+      Quiz.findOne({
+          id: req.params.id
+      }).populate('questions').exec(function (e, r) {
+          res.view('quiz/play', {
+              quiz: r
+          });
+      });
     }
 };

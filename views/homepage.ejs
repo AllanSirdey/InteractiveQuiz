@@ -1,17 +1,22 @@
 <!-- Header -->
-<div class="w3-container" style="margin-top:80px" id="showcase">
-  <h1 class="w3-jumbo"><%= i18n('Interactive') %> quiz</h1>
-  <h1 class="w3-xxxlarge w3-text-red"><%= i18n('PlayQuiz') %></h1>
-  <hr style="width:50px;border:5px solid red" class="w3-round">
+<h1 class="w3-jumbo"><%= i18n('Interactive') %> quiz</h1>
+
+<div class="row" style="margin-top:25px">
+  <div class="col-md-6">
+    <div class="w3-container w3-dark-grey w3-xlarge">
+      <div class="w3-xxxlarge"><%= i18n('PlayQuiz') %></div>
+      <hr style="width:50px;border:5px solid white" class="w3-round">
+    </div>
+  </div>
+
+  <!-- Services -->
+  <div class="col-md-6">
+    <div class="w3-container w3-red  w3-xlarge" id="services">
+      <div class="w3-xxxlarge"><%= i18n('Connect') %></div>
+      <hr style="width:50px;border:5px solid white" class="w3-round">
+    </div>
+  </div>
 </div>
-
-
-<!-- Services -->
-<div class="w3-container" id="services" style="margin-top:25px">
-  <h1 class="w3-xxxlarge w3-text-red"><%= i18n('Connect') %></h1>
-  <hr style="width:50px;border:5px solid red" class="w3-round">
-</div>
-
 
 <!-- Designers
 <div class="w3-container" id="designers" style="margin-top:25px">
@@ -52,8 +57,8 @@
 </div>-->
 
 <div class="w3-container" id="services" style="margin-top:25px">
-  <h1 class="w3-xxxlarge w3-text-red">Challenges</h1>
-  <hr style="width:50px;border:5px solid red" class="w3-round">
+  <div class="w3-xxxlarge">Challenges</div>
+  <hr style="width:50px;border:5px solid" class="w3-round">
 </div>
 
 <!-- Packages / Pricing Tables -->
@@ -136,8 +141,8 @@
 
 <!-- Contact -->
 <div class="w3-container" id="contact" style="margin-top:75px">
-  <h1 class="w3-xxxlarge w3-text-red">Contact.</h1>
-  <hr style="width:50px;border:5px solid red" class="w3-round">
+  <h1 class="w3-xxxlarge">Contact.</h1>
+  <hr style="width:50px;border:5px solid" class="w3-round">
   <p>Do you want us to style your home? Fill out the form and fill me in with the details :) We love meeting new people!</p>
   <form action="/action_page.php" target="_blank">
     <div class="w3-section">

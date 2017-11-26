@@ -11,3 +11,43 @@
     background: #f44336!important;
     color: white !important;
 }
+
+.play{
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.w3-xxxlarge {
+    font-size: 38px!important;
+}
+
+body{
+  background: url("/images/dark.jpg") no-repeat center fixed;
+  background-size: cover;
+  color:white;
+}
+
+.w3-red{
+  color:white !important;
+}
+
+h1{
+  color:white;
+  margin:60px 0px 60px 0px;
+}
+
+.borderTitle{
+  border-top:1px solid black;
+  border-bottom:1px solid black;
+}
+
+.w3-dark-grey{
+  background-color: #337ab7!important;
+}
+
+.answer{
+  background-color: #337ab7!important;
+  text-align: center;
+  padding: 50px;
+}

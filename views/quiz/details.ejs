@@ -1,25 +1,39 @@
 <h1>Details quiz</h1>
 
-
-<div class="w3-row-padding w3-grayscale">
-
-    <div class="w3-col m4 w3-margin-bottom quiz-list">
+<div class="row w3-light-grey">
+  <div class="col-md-4 col-sm-6 col-xs-6" style="height:150px;">
+    <button class=" play w3-xlarge w3-red w3-padding-32 w3-hover-black" onclick="location.href='/quiz/play/<%= quiz.id %>'">Play</button>
+  </div>
+  <div class="col-md-8 col-sm-6 col-xs-6">
+    <div class="w3-margin-bottom quiz-list">
         <div class="w3-light-grey">
             <div class="w3-container">
                 <h3><%= quiz.title %></h3>
                 <p class="w3-opacity">
                     <%= quiz.author %>
                 </p>
-                <p>
-                    <%= quiz.description %>
-                </p>
+
             </div>
         </div>
     </div>
+  </div>
+</div>
+<div class="row w3-light-grey">
+  <div class="col-md-12">
+      <p><%= quiz.description %></p>
+  </div>
+</div>
+
+<br>
+
+<div class="w3-row-padding">
+
+
+
 
     <!--<p><%- JSON.stringify(quiz) %></p>-->
 
-    <div class="w3-col m12 w3-margin-bottom">
+    <div class="w3-col m12 w3-margin-bottom w3-grayscale">
         <table class="table table-bordered">
             <th>Question</th>
             <th>Answer 1</th>
@@ -45,7 +59,7 @@
                         <%= q.answer3 %>
                     </td>
                     <td>
-                        <button class="w3-button w3-red w3-padding-large w3-hover-black"                                                                 onclick="location.href='/questions/delete/<%= q.id %>'">
+                        <button class="w3-button w3-red w3-padding-large w3-hover-black" onclick="location.href='/questions/delete/<%= q.id %>'">
                             Delete
                         </button>
                     </td>
@@ -54,11 +68,22 @@
         </table>
     </div>
 
-    <button class="w3-button w3-red w3-padding-large w3-hover-black" onclick="location.href='/question/new/<%= quiz.id %>'">Add question</button>
+      <button class="w3-button w3-red w3-padding-large w3-hover-black w3-grayscale" onclick="location.href='/question/new/<%= quiz.id %>'">Add question</button>
 
-    <br>
-    <br>
+      <br><br>
 
-    <button class="w3-button w3-red w3-padding-large w3-hover-black" onclick="location.href='/quiz/delete/<%= quiz.id %>'">Delete</button>
+      <button class="w3-button w3-red w3-padding-large w3-hover-black w3-grayscale" onclick="location.href='/quiz/delete/<%= quiz.id %>'">Delete</button>
+
 
 </div>
+
+<script type="text/javascript">
+      setInterval(animateButton, 3000);
+
+      function animateButton(){
+
+        $(".play").animate({height : '+=10px', width : '+=10px', opacity : '-=0.2'}, "normal");
+        $(".play").animate({height : '-=10px', width : '-=10px', opacity : '+=0.5'}, "normal");
+
+      }
+</script>

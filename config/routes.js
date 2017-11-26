@@ -81,6 +81,11 @@ module.exports.routes = {
         action: 'delete'
     },
 
+    'get /quiz/play/:id': {
+        controller: 'QuizController',
+        action: 'play'
+    },
+
     /* QUESTION */
 
     'get /question/new/:id_quiz': {
