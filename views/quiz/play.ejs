@@ -14,14 +14,14 @@
 <div class="row">
   <div class="col-md-1"></div>
   <div class="col-md-4">
-    <div class="answer">
+    <div class="answer" id="1">
       Answer A
     </div>
   </div>
 
   <div class="col-md-2"></div>
   <div class="col-md-4">
-    <div class="answer">
+    <div class="answer" id="2">
       Answer B
     </div>
   </div>
@@ -33,14 +33,14 @@
 <div class="row">
   <div class="col-md-1"></div>
   <div class="col-md-4">
-    <div class="answer">
+    <div class="answer" id="3">
       Answer C
     </div>
   </div>
 
   <div class="col-md-2"></div>
   <div class="col-md-4">
-    <div class="answer">
+    <div class="answer" id="4">
       Answer D
     </div>
   </div>
@@ -65,7 +65,7 @@
       console.log("Answer 3: " + allQuestions[i].answer3);
 
       // timer answer the question
-      var timeToAnswer = 5;
+      var timeToAnswer = 10;
       var t = timeToAnswer;
       setInterval(function(){
         if(t == 0)
@@ -75,7 +75,45 @@
       }, 1000);
 
       $("#question").hide().html(allQuestions[i].question).fadeIn(1000);
-      i++;
+      var random = Math.floor(Math.random() * 4) + 1
+      console.log(random);
+
+      // hide answers
+      $("#1").hide();
+      $("#2").hide();
+      $("#3").hide();
+      $("#4").hide();
+
+
+      setTimeout(function(){
+        $("#"+random).hide().html(allQuestions[i].correct_answer).fadeIn(1000);
+
+        if(random == 1){
+          $("#2").hide().html(allQuestions[i].answer1).fadeIn(1000);
+          $("#3").hide().html(allQuestions[i].answer2).fadeIn(1000);
+          $("#4").hide().html(allQuestions[i].answer3).fadeIn(1000);
+        }
+
+        if(random == 2){
+          $("#1").hide().html(allQuestions[i].answer1).fadeIn(1000);
+          $("#3").hide().html(allQuestions[i].answer2).fadeIn(1000);
+          $("#4").hide().html(allQuestions[i].answer3).fadeIn(1000);
+        }
+
+        if(random == 3){
+          $("#1").hide().html(allQuestions[i].answer1).fadeIn(1000);
+          $("#2").hide().html(allQuestions[i].answer2).fadeIn(1000);
+          $("#4").hide().html(allQuestions[i].answer3).fadeIn(1000);
+        }
+
+        if(random == 4){
+          $("#1").hide().html(allQuestions[i].answer1).fadeIn(1000);
+          $("#2").hide().html(allQuestions[i].answer2).fadeIn(1000);
+          $("#3").hide().html(allQuestions[i].answer3).fadeIn(1000);
+        }
+        i++;
+      }, (timeToAnswer+1)*1000);
+
 
       setInterval(function(){
         if (i<nb_questions){
@@ -87,9 +125,44 @@
 
           $("#question").hide().html(allQuestions[i].question).fadeIn(1000);
 
-          i++;
+          var random = Math.floor(Math.random() * 4) + 1
+          console.log(random)
+
+          $("#1").fadeOut(1000);
+          $("#2").fadeOut(1000);
+          $("#3").fadeOut(1000);
+          $("#4").fadeOut(1000);
+
+          setTimeout(function(){
+            $("#"+random).hide().html(allQuestions[i].correct_answer).fadeIn(1000);
+
+            if(random == 1){
+              $("#2").hide().html(allQuestions[i].answer1).fadeIn(1000);
+              $("#3").hide().html(allQuestions[i].answer2).fadeIn(1000);
+              $("#4").hide().html(allQuestions[i].answer3).fadeIn(1000);
+            }
+
+            if(random == 2){
+              $("#1").hide().html(allQuestions[i].answer1).fadeIn(1000);
+              $("#3").hide().html(allQuestions[i].answer2).fadeIn(1000);
+              $("#4").hide().html(allQuestions[i].answer3).fadeIn(1000);
+            }
+
+            if(random == 3){
+              $("#1").hide().html(allQuestions[i].answer1).fadeIn(1000);
+              $("#2").hide().html(allQuestions[i].answer2).fadeIn(1000);
+              $("#4").hide().html(allQuestions[i].answer3).fadeIn(1000);
+            }
+
+            if(random == 4){
+              $("#1").hide().html(allQuestions[i].answer1).fadeIn(1000);
+              $("#2").hide().html(allQuestions[i].answer2).fadeIn(1000);
+              $("#3").hide().html(allQuestions[i].answer3).fadeIn(1000);
+            }
+            i++;
+          }, (timeToAnswer+1)*1000);
         }
-      }, (timeToAnswer+1)*1000);
+      }, ((timeToAnswer)*1000) *2);
     }
   });
 
