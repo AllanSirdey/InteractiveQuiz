@@ -3,16 +3,16 @@
 
 <div class="row" style="margin-top:25px">
   <div class="col-md-6">
-    <div class="w3-container w3-dark-grey w3-xlarge">
+    <div class="w3-container w3-dark-grey w3-xlarge play-home" onclick="location.href='/quiz'">
       <div class="w3-xxxlarge"><%= i18n('PlayQuiz') %></div>
-      <hr style="width:50px;border:5px solid white" class="w3-round">
+      <hr id="play" style="width:50px;border:5px solid white" class="w3-round">
     </div>
   </div>
 
   <!-- Services -->
   <div class="col-md-6">
-    <div class="w3-container w3-red  w3-xlarge" id="services">
-      <div class="w3-xxxlarge"><%= i18n('Connect') %></div>
+    <div class="w3-container w3-red  w3-xlarge" id="services" onclick="location.href='/parameters'" style="cursor:pointer;text-align:center">
+      <div class="w3-xxxlarge"><%= i18n('Parameters') %></div>
       <hr style="width:50px;border:5px solid white" class="w3-round">
     </div>
   </div>
@@ -160,3 +160,22 @@
     <button type="submit" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom">Send Message</button>
   </form>
 </div>
+
+<script src="//cdn.jsdelivr.net/jquery.shadow-animation/1/mainfile"></script>
+<script type="text/javascript">
+      setInterval(animateButton, 5000);
+
+      function animateButton(){
+
+        $(".play-home").animate({boxShadow : 'rgb(187, 185, 185) 0px 0px 10px 6px'}, 200);
+        $(".play-home").animate({boxShadow : 'rgb(187, 185, 185) 0px 0px 10px 2px'}, 200);
+
+      }
+      $(".play-home").hover(
+        function() {
+          $( ".play-home" ).css({boxShadow : 'rgb(187, 185, 185) 0px 0px 2px 2px'});
+        }, function() {
+          $( ".play-home" ).css({boxShadow : 'rgb(187, 185, 185) 0px 0px 10px 2px'});
+        }
+      );
+</script>

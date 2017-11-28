@@ -44,10 +44,16 @@ h1{
 
 .w3-dark-grey{
   background-color: #337ab7!important;
+  text-align: center;
 }
 
 .answer{
   background-color: #337ab7!important;
   text-align: center;
   padding: 50px;
+}
+
+.play-home{
+  cursor:pointer;
+  box-shadow:rgb(187, 185, 185) 0px 0px 10px 2px;
 }
