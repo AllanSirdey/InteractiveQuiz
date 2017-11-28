@@ -54,4 +54,37 @@
       </div>
     </div>
   </div>
+  <div class="w3-col m4 w3-margin-bottom">
+    <div class="w3-light-grey">
+      <div class="w3-container">
+        <h3><%= i18n('ChooseLevel') %></h3>
+        <p class="w3-opacity"><%= i18n('Actual') %>: </p>
+        <p><%= i18n('LevelDescription') %>
+          <form action="/changeTheme">
+            <select>
+              <option value="fr">Easy</option>
+              <option value="en">Normal</option>
+              <option value="es">Difficult</option>
+            </select>
+          </form>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="w3-col m4 w3-margin-bottom">
+    <div class="w3-light-grey">
+      <div class="w3-container">
+        <h3><%= i18n('ActivateSong') %></h3>
+        <p class="w3-opacity"><%= i18n('Actual') %>: </p>
+        <p><%= i18n('ActivateSongDescription') %>
+          <form action="/changeTheme">
+            <select>
+              <option value="fr">Yes</option>
+              <option value="en">No</option>
+            </select>
+          </form>
+        </p>
+      </div>
+    </div>
+  </div>
 </div>

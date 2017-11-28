@@ -4,7 +4,7 @@
   "Home": "Home",
   "Connect": "Connect",
   "PlayQuiz": "Play",
-  "Parameters": "Parameters",
+  "Parameters": "Options",
   "Challenges": "Challenges",
 
 	"ChooseQuiz": "Choose a quiz",
@@ -12,9 +12,14 @@
 	"ChooseTheme": "Choose your theme",
 	"ChooseSize": "Choose your size",
 	"ChooseLanguage": "Choose your language",
+	"ChooseLevel": "Choose your level",
 	"ThemeDescription": "Select the theme you are more confortable with.",
 	"SizeDescription": "You can choose the size of the text.",
 	"LanguageDescription": "You can select the language you want to answer the quizz.",
+	"LevelDescription": "You can select the level of difficulty.",
+	"ActivateSong": "Activate song ?",
+	"ActivateSongDescription": "The system will speak to you and tell the questions and possible answers.",
+
 
 	"Actual": "Actual",
 

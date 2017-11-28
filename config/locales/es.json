@@ -1,29 +1,34 @@
 {
-  "Welcome": "Bienvenido",
-  "InteractiveQuiz": "",
-  "Home": "Home",
-  "Connect": "Conectarse",
-  "PlayQuiz": "",
-  "Parameters": "",
-  "Challenges": "",
+	"Welcome": "Bienvenida",
+  "Interactive": "Interactivo",
+  "Home": "Bienvenida",
+  "Connect": "Conectar",
+  "PlayQuiz": "Jugar",
+  "Parameters": "Opciones",
+  "Challenges": "Desafíos",
 
-  "ChooseQuiz": "Escoger un quiz",
+	"ChooseQuiz": "Elija una prueba",
 
-	"ChooseTheme": "",
-	"ChooseSize": "",
-	"ChooseLanguage": "",
-	"ThemeDescription": "",
-	"SizeDescription": "",
-	"LanguageDescription": "",
+	"ChooseTheme": "Elige tu tema",
+	"ChooseSize": "Elige tu talla",
+	"ChooseLanguage": "Elige tu idioma",
+	"ChooseLevel": "Elige tu nivel",
+	"ThemeDescription": "Seleccione el tema con el que se siente más cómodo.",
+	"SizeDescription": "Puedes elegir el tamaño del texto.",
+	"LanguageDescription": "Puede seleccionar el idioma que desea para responder el cuestionario.",
+	"LevelDescription": "Puedes seleccionar el nivel de dificultad.",
+	"ActivateSong": "Activar el sonido?",
+	"ActivateSongDescription": "El sistema le hablará y le dirá las preguntas y posibles respuestas.",
 
-	"Actual": "",
 
-	"BlueTheme": "",
-	"RedTheme": "",
-	"DarkTheme": "",
-	"LightTheme": "",
+	"Actual": "Actual",
 
-	"SmallSize": "",
-	"NormalSize": "",
-	"BigSize": ""
+	"BlueTheme": "Azul",
+	"RedTheme": "Rojo",
+	"DarkTheme": "Oscuro",
+	"LightTheme": "Ligero",
+
+	"SmallSize": "Pequeña",
+	"NormalSize": "Normal",
+	"BigSize": "Grande"
 }
