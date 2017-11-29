@@ -57,3 +57,7 @@ h1{
   cursor:pointer;
   box-shadow:rgb(187, 185, 185) 0px 0px 6px 2px;
 }
+
+input{
+  color:black;
+}
