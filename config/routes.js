@@ -109,6 +109,12 @@ module.exports.routes = {
         view: 'parameters/parameters'
     },
 
+    /* ARKANOID */
+
+    'get /arkanoid': {
+        view: 'arkanoid/index'
+    },
+
 
 
     /***************************************************************************
