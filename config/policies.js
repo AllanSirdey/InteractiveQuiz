@@ -27,9 +27,9 @@ module.exports.policies = {
      ***************************************************************************/
 
     //'*': true,
-    '*': ['sessionAuth'],
+    //'*': ['sessionAuth'],
     //MessageController: ['sessionAuth'],
-    //QuizController: ['sessionAuth']
+    QuizController: ['sessionAuth']
 
     /***************************************************************************
      *                                                                          *

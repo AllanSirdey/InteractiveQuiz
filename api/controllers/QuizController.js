@@ -7,6 +7,9 @@
 
 module.exports = {
     getQuiz: function (req, res) {
+
+
+        console.log(req.session.user.auth.email);
         req.setLocale('es');
         Quiz.find({}, function (err, found) {
             res.view('quiz/quiz', {
