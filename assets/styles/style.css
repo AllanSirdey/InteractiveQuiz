@@ -48,7 +48,7 @@ h1{
 }
 
 .answer{
-  background-color: #337ab7!important;
+  background-color: #337ab7;
   text-align: center;
   padding: 50px;
 }
@@ -60,4 +60,26 @@ h1{
 
 input{
   color:black;
+}
+
+.w3-xxxlarge{
+  font-size: 42px!important;
+}
+
+.modal-dialog{
+  color:black;
+}
+
+.modal-dialog h1{
+  color:black;
+}
+
+.answer:hover{
+  background-color: #f44336;
+}
+
+.selectedAnswer{
+  background-color: #f44336;
+  border: 10px inset white;
+  padding: 40px;
 }

@@ -1,12 +1,13 @@
-<h1>Play quiz</h1>
+<h1><%= i18n('PlayQuiz') %></h1>
 
 <div class="row" style="margin-top:25px;">
-  <div class="col-md-11 w3-red w3-padding-large w3-xxlarge">
+  <div class="col-md-10 w3-red w3-padding-large w3-xxlarge">
     <p id="question"></p>
   </div>
-    <div class="col-md-1 w3-red w3-padding-large w3-xxlarge">
-      <p id="timeToAnswer"></p>
-    </div>
+  <div class="col-md-1"></div>
+  <div class="col-md-1 w3-red w3-padding-large w3-xxlarge">
+    <p id="timeToAnswer"></p>
+  </div>
 </div>
 
 <br><br>
@@ -48,122 +49,155 @@
 </div>
 
 <script type="text/javascript">
-  $( document ).ready(function() {
+  $(document).ready(function() {
 
-    var allQuestions = <%- JSON.stringify(quiz.questions) %>;
-    console.log(allQuestions);
+    $(".answer")
+      .click(function() {
+        $(".answer").removeClass("selectedAnswer");
+        $( this ).addClass("selectedAnswer");
+      });
 
-    var i = 0;
-    var nb_questions = allQuestions.length;
+    bootbox.alert({
+        message: "<h1><%= i18n('Instruction') %></h1><%= i18n('InstructionCareful') %><h2><%= i18n('Browser') %></h2> <%= i18n('InstructionBrower1') %><br><%= i18n('InstructionBrower2') %><br><%= i18n('InstructionBrower3') %><br><%= i18n('InstructionBrower4') %><h2><%= i18n('InstructionKinect') %></h2><%= i18n('InstructionKinect1') %><br><%= i18n('InstructionKinect2') %><br><%= i18n('InstructionKinect3') %><br><%= i18n('InstructionKinect4') %><br><%= i18n('InstructionKinect5') %>",
+      callback: function() {
+        // Size of elements
+        var size = '<%= sails.config.parameters.size %>';
+        if (size == 'small') {
+          $(".w3-xxlarge").addClass("w3-xlarge");
+          $(".answer").addClass("w3-large");
+        } else if (size == 'normal') {
 
-    if(nb_questions > 0)
-    {
-      console.log("Question: " + allQuestions[i].question);
-      console.log("Correct answer: " + allQuestions[i].correct_answer);
-      console.log("Answer 1: " + allQuestions[i].answer1);
-      console.log("Answer 2: " + allQuestions[i].answer2);
-      console.log("Answer 3: " + allQuestions[i].answer3);
-
-      // timer answer the question
-      var timeToAnswer = 10;
-      var t = timeToAnswer;
-      setInterval(function(){
-        if(t == 0)
-          t = timeToAnswer;
-        $("#timeToAnswer").html(t + 's');
-        t--;
-      }, 1000);
-
-      $("#question").hide().html(allQuestions[i].question).fadeIn(1000);
-      var random = Math.floor(Math.random() * 4) + 1
-      console.log(random);
-
-      // hide answers
-      $("#1").hide();
-      $("#2").hide();
-      $("#3").hide();
-      $("#4").hide();
-
-
-      setTimeout(function(){
-        $("#"+random).hide().html(allQuestions[i].correct_answer).fadeIn(1000);
-
-        if(random == 1){
-          $("#2").hide().html(allQuestions[i].answer1).fadeIn(1000);
-          $("#3").hide().html(allQuestions[i].answer2).fadeIn(1000);
-          $("#4").hide().html(allQuestions[i].answer3).fadeIn(1000);
+        } else {
+          $(".w3-xxlarge").addClass("w3-xxxlarge");
+          $(".answer").addClass("w3-xxlarge");
         }
 
-        if(random == 2){
-          $("#1").hide().html(allQuestions[i].answer1).fadeIn(1000);
-          $("#3").hide().html(allQuestions[i].answer2).fadeIn(1000);
-          $("#4").hide().html(allQuestions[i].answer3).fadeIn(1000);
-        }
+        var allQuestions = <%- JSON.stringify(quiz.questions) %>;
+        console.log(allQuestions);
 
-        if(random == 3){
-          $("#1").hide().html(allQuestions[i].answer1).fadeIn(1000);
-          $("#2").hide().html(allQuestions[i].answer2).fadeIn(1000);
-          $("#4").hide().html(allQuestions[i].answer3).fadeIn(1000);
-        }
+        var i = 0;
+        var nb_questions = allQuestions.length;
 
-        if(random == 4){
-          $("#1").hide().html(allQuestions[i].answer1).fadeIn(1000);
-          $("#2").hide().html(allQuestions[i].answer2).fadeIn(1000);
-          $("#3").hide().html(allQuestions[i].answer3).fadeIn(1000);
-        }
-        i++;
-      }, (timeToAnswer+1)*1000);
-
-
-      setInterval(function(){
-        if (i<nb_questions){
+        if (nb_questions > 0) {
           console.log("Question: " + allQuestions[i].question);
           console.log("Correct answer: " + allQuestions[i].correct_answer);
           console.log("Answer 1: " + allQuestions[i].answer1);
           console.log("Answer 2: " + allQuestions[i].answer2);
           console.log("Answer 3: " + allQuestions[i].answer3);
 
+          // timer answer the question
+          var timeToAnswer;
+          var difficulty = '<%= sails.config.parameters.difficulty %>';
+
+          if (difficulty == 'easy') {
+            timeToAnswer = 15;
+          } else if (difficulty == 'normal') {
+            timeToAnswer = 10;
+          } else {
+            timeToAnswer = 5;
+          }
+
+          var t = timeToAnswer;
+          setInterval(function() {
+            if (t == 0)
+              t = timeToAnswer;
+            $("#timeToAnswer").html(t + 's');
+            t--;
+          }, 1000);
+
           $("#question").hide().html(allQuestions[i].question).fadeIn(1000);
-
           var random = Math.floor(Math.random() * 4) + 1
-          console.log(random)
+          console.log(random);
 
-          $("#1").fadeOut(1000);
-          $("#2").fadeOut(1000);
-          $("#3").fadeOut(1000);
-          $("#4").fadeOut(1000);
+          // hide answers
+          $("#1").hide();
+          $("#2").hide();
+          $("#3").hide();
+          $("#4").hide();
 
-          setTimeout(function(){
-            $("#"+random).hide().html(allQuestions[i].correct_answer).fadeIn(1000);
 
-            if(random == 1){
+          setTimeout(function() {
+            $("#" + random).hide().html(allQuestions[i].correct_answer).fadeIn(1000);
+
+            if (random == 1) {
               $("#2").hide().html(allQuestions[i].answer1).fadeIn(1000);
               $("#3").hide().html(allQuestions[i].answer2).fadeIn(1000);
               $("#4").hide().html(allQuestions[i].answer3).fadeIn(1000);
             }
 
-            if(random == 2){
+            if (random == 2) {
               $("#1").hide().html(allQuestions[i].answer1).fadeIn(1000);
               $("#3").hide().html(allQuestions[i].answer2).fadeIn(1000);
               $("#4").hide().html(allQuestions[i].answer3).fadeIn(1000);
             }
 
-            if(random == 3){
+            if (random == 3) {
               $("#1").hide().html(allQuestions[i].answer1).fadeIn(1000);
               $("#2").hide().html(allQuestions[i].answer2).fadeIn(1000);
               $("#4").hide().html(allQuestions[i].answer3).fadeIn(1000);
             }
 
-            if(random == 4){
+            if (random == 4) {
               $("#1").hide().html(allQuestions[i].answer1).fadeIn(1000);
               $("#2").hide().html(allQuestions[i].answer2).fadeIn(1000);
               $("#3").hide().html(allQuestions[i].answer3).fadeIn(1000);
             }
             i++;
-          }, (timeToAnswer+1)*1000);
-        }
-      }, ((timeToAnswer)*1000) *2);
-    }
-  });
+          }, (timeToAnswer + 1) * 1000);
 
+
+          setInterval(function() {
+            if (i < nb_questions) {
+              console.log("Question: " + allQuestions[i].question);
+              console.log("Correct answer: " + allQuestions[i].correct_answer);
+              console.log("Answer 1: " + allQuestions[i].answer1);
+              console.log("Answer 2: " + allQuestions[i].answer2);
+              console.log("Answer 3: " + allQuestions[i].answer3);
+
+              $("#question").hide().html(allQuestions[i].question).fadeIn(1000);
+
+              var random = Math.floor(Math.random() * 4) + 1
+              console.log(random)
+
+              $("#1").fadeOut(1000);
+              $("#2").fadeOut(1000);
+              $("#3").fadeOut(1000);
+              $("#4").fadeOut(1000);
+
+              setTimeout(function() {
+                $("#" + random).hide().html(allQuestions[i].correct_answer).fadeIn(1000);
+
+                if (random == 1) {
+                  $("#2").hide().html(allQuestions[i].answer1).fadeIn(1000);
+                  $("#3").hide().html(allQuestions[i].answer2).fadeIn(1000);
+                  $("#4").hide().html(allQuestions[i].answer3).fadeIn(1000);
+                }
+
+                if (random == 2) {
+                  $("#1").hide().html(allQuestions[i].answer1).fadeIn(1000);
+                  $("#3").hide().html(allQuestions[i].answer2).fadeIn(1000);
+                  $("#4").hide().html(allQuestions[i].answer3).fadeIn(1000);
+                }
+
+                if (random == 3) {
+                  $("#1").hide().html(allQuestions[i].answer1).fadeIn(1000);
+                  $("#2").hide().html(allQuestions[i].answer2).fadeIn(1000);
+                  $("#4").hide().html(allQuestions[i].answer3).fadeIn(1000);
+                }
+
+                if (random == 4) {
+                  $("#1").hide().html(allQuestions[i].answer1).fadeIn(1000);
+                  $("#2").hide().html(allQuestions[i].answer2).fadeIn(1000);
+                  $("#3").hide().html(allQuestions[i].answer3).fadeIn(1000);
+                }
+                i++;
+              }, (timeToAnswer + 1) * 1000);
+            }
+          }, ((timeToAnswer) * 1000) * 2);
+        }
+      }
+    });
+
+  });
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>

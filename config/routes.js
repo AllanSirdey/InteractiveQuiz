@@ -109,6 +109,11 @@ module.exports.routes = {
         view: 'parameters/parameters'
     },
 
+    'post /updateParameters': {
+        controller: 'ParametersController',
+        action: 'updateParameters'
+    },
+
     /* ARKANOID */
 
     'get /arkanoid': {

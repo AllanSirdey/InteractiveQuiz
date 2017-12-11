@@ -30,5 +30,19 @@
 
 	"SmallSize": "Small",
 	"NormalSize": "Normal",
-	"BigSize": "Big"
+	"BigSize": "Big",
+
+	"Instruction": "Instructions",
+	"InstructionCareful": "Please read carefuly the following instructions in order to know how to play.",
+	"Browser": "Using browser",
+	"InstructionBrower1": "1 - In a first time, you have time to read and understand the question.",
+	"InstructionBrower2": "2 - Then, the possible answers are displayed.",
+	"InstructionBrower3": "3 - To answer, select by clicking on the correct answer.",
+	"InstructionBrower4": "4 - At the end of the timer, you answer is validated and the next question is displayed.",
+	"InstructionKinect": "Using Kinect",
+	"InstructionKinect1": "1 - In a first time, you have time to read and understand the question.",
+	"InstructionKinect2": "2 - Then, the possible answers are displayed.",
+	"InstructionKinect3": "3 - To answer, select by moving your right hand in the direction of one answer. the background color will change when you hover an answer. ",
+	"InstructionKinect4": "4 - To confirm the answer, stop moving and close your hand (as a fist).",
+	"InstructionKinect5": "5 - At the end of the timer, you answer is validated and the next question is displayed."
 }

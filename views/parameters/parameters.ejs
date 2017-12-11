@@ -1,87 +1,85 @@
 <h1><%= i18n('Parameters') %></h1>
 
-<div class="w3-row-padding">
-  <div class="w3-col m4 w3-margin-bottom">
-    <div class="w3-light-grey">
-      <div class="w3-container">
-        <h3><%= i18n('ChooseTheme') %></h3>
-        <p class="w3-opacity"><%= i18n('Actual') %>: </p>
-        <p><%= i18n('ThemeDescription') %>
-          <form action="/changeTheme">
-            <select>
-              <option value="blue"><%= i18n('BlueTheme') %></option>
-              <option value="red"><%= i18n('RedTheme') %></option>
-              <option value="dark"><%= i18n('DarkTheme') %></option>
-              <option value="light"><%= i18n('LightTheme') %></option>
+<form method="post" action="/updateParameters">
+  <div class="w3-row-padding">
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <div class="w3-container">
+          <h3><%= i18n('ChooseTheme') %></h3>
+          <p class="w3-opacity"><%= i18n('Actual') %>: <%= sails.config.parameters.theme %></p>
+          <p><%= i18n('ThemeDescription') %>
+              <select name="theme">
+                <option selected="selected" value="dark"><%= i18n('DarkTheme') %></option>
+                <option value="light"><%= i18n('LightTheme') %></option>
+              </select>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <div class="w3-container">
+          <h3><%= i18n('ChooseSize') %></h3>
+          <p class="w3-opacity"><%= i18n('Actual') %>: <%= sails.config.parameters.size %></p>
+          <p><%= i18n('SizeDescription') %>
+              <select name="size">
+                <option value="small"><%= i18n('SmallSize') %></option>
+                <option selected="selected" value="normal"><%= i18n('NormalSize') %></option>
+                <option value="big"><%= i18n('BigSize') %></option>
+              </select>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <div class="w3-container">
+          <h3><%= i18n('ChooseLanguage') %></h3>
+          <p class="w3-opacity"><%= i18n('Actual') %>: <%= sails.config.parameters.langage %></p>
+          <p><%= i18n('LanguageDescription') %>
+          <div>
+            <select name="langage">
+              <option value="fr">Francais</option>
+              <option selected="selected" value="en">English</option>
+              <option value="es">Espanol</option>
             </select>
-          </form>
-        </p>
+            <img src="/images/flag-fr.png" alt="Francais" height="42" width="42">
+            <img src="/images/flag-gb.png" alt="English" height="42" width="42">
+            <img src="/images/flag-es.png" alt="Español" height="42" width="42">
+          </div>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <div class="w3-container">
+          <h3><%= i18n('ChooseLevel') %></h3>
+          <p class="w3-opacity"><%= i18n('Actual') %>: <%= sails.config.parameters.difficulty %></p>
+          <p><%= i18n('LevelDescription') %>
+              <select name="difficulty">
+                <option value="easy">Easy</option>
+                <option selected="selected" value="normal">Normal</option>
+                <option value="difficult">Difficult</option>
+              </select>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <div class="w3-container">
+          <h3><%= i18n('ActivateSong') %></h3>
+          <p class="w3-opacity"><%= i18n('Actual') %>: <%= sails.config.parameters.activateSound %></p>
+          <p><%= i18n('ActivateSongDescription') %>
+              <select name="activateSound">
+                <option value="yes">Yes</option>
+                <option selected="selected" value="no">No</option>
+              </select>
+          </p>
+        </div>
       </div>
     </div>
   </div>
-  <div class="w3-col m4 w3-margin-bottom">
-    <div class="w3-light-grey">
-      <div class="w3-container">
-        <h3><%= i18n('ChooseSize') %></h3>
-        <p class="w3-opacity"><%= i18n('Actual') %>: </p>
-        <p><%= i18n('SizeDescription') %>
-          <form action="/changeSize">
-            <select>
-              <option value="small"><%= i18n('SmallSize') %></option>
-              <option value="normal"><%= i18n('NormalSize') %></option>
-              <option value="big"><%= i18n('BigSize') %></option>
-            </select>
-          </form>
-        </p>
-      </div>
-    </div>
-  </div>
-  <div class="w3-col m4 w3-margin-bottom">
-    <div class="w3-light-grey">
-      <div class="w3-container">
-        <h3><%= i18n('ChooseLanguage') %></h3>
-        <p class="w3-opacity"><%= i18n('Actual') %>: </p>
-        <p><%= i18n('LanguageDescription') %>
-        <div>
-          <img src="/images/flag-fr.png" alt="Francais" height="42" width="42">
-          <img src="/images/flag-gb.png" alt="English" height="42" width="42">
-          <img src="/images/flag-es.png" alt="Español" height="42" width="42">
-        </div>  
-        </p>
-      </div>
-    </div>
-  </div>
-  <div class="w3-col m4 w3-margin-bottom">
-    <div class="w3-light-grey">
-      <div class="w3-container">
-        <h3><%= i18n('ChooseLevel') %></h3>
-        <p class="w3-opacity"><%= i18n('Actual') %>: </p>
-        <p><%= i18n('LevelDescription') %>
-          <form action="/changeTheme">
-            <select>
-              <option value="fr">Easy</option>
-              <option value="en">Normal</option>
-              <option value="es">Difficult</option>
-            </select>
-          </form>
-        </p>
-      </div>
-    </div>
-  </div>
-  <div class="w3-col m4 w3-margin-bottom">
-    <div class="w3-light-grey">
-      <div class="w3-container">
-        <h3><%= i18n('ActivateSong') %></h3>
-        <p class="w3-opacity"><%= i18n('Actual') %>: </p>
-        <p><%= i18n('ActivateSongDescription') %>
-          <form action="/changeTheme">
-            <select>
-              <option value="fr">Yes</option>
-              <option value="en">No</option>
-            </select>
-          </form>
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
+  <input type="submit" value="submit">
+</form>
