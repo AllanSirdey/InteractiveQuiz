@@ -2,7 +2,10 @@
 
 <div class="row" style="margin-top:25px;">
   <div class="col-md-10 w3-red w3-padding-large w3-xxlarge">
-    <p id="question"></p>
+    <div class="row">
+      <div class="col-md-10"><p id="question"></p></div>
+      <div class="col-md-2"><input onclick='speakText()' type='button' value='🔊' /></div>
+    </div>
   </div>
   <div class="col-md-1"></div>
   <div class="col-md-1 w3-red w3-padding-large w3-xxlarge">
@@ -49,6 +52,13 @@
 </div>
 
 <script type="text/javascript">
+
+  function speakText() {
+    var text = $("#question").text();
+    console.log(text);
+    responsiveVoice.speak(text);
+  }
+
   $(document).ready(function() {
 
     $(".answer")
@@ -58,8 +68,9 @@
       });
 
     bootbox.alert({
-        message: "<h1><%= i18n('Instruction') %></h1><%= i18n('InstructionCareful') %><h2><%= i18n('Browser') %></h2> <%= i18n('InstructionBrower1') %><br><%= i18n('InstructionBrower2') %><br><%= i18n('InstructionBrower3') %><br><%= i18n('InstructionBrower4') %><h2><%= i18n('InstructionKinect') %></h2><%= i18n('InstructionKinect1') %><br><%= i18n('InstructionKinect2') %><br><%= i18n('InstructionKinect3') %><br><%= i18n('InstructionKinect4') %><br><%= i18n('InstructionKinect5') %>",
+      message: "<h1><%= i18n('Instruction') %></h1><%= i18n('InstructionCareful') %><h2><%= i18n('Browser') %></h2> <%= i18n('InstructionBrower1') %><br><%= i18n('InstructionBrower2') %><br><%= i18n('InstructionBrower3') %><br><%= i18n('InstructionBrower4') %><h2><%= i18n('InstructionKinect') %></h2><%= i18n('InstructionKinect1') %><br><%= i18n('InstructionKinect2') %><br><%= i18n('InstructionKinect3') %><br><%= i18n('InstructionKinect4') %><br><%= i18n('InstructionKinect5') %>",
       callback: function() {
+
         // Size of elements
         var size = '<%= sails.config.parameters.size %>';
         if (size == 'small') {
@@ -201,3 +212,4 @@
   });
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+<script src='https://code.responsivevoice.org/responsivevoice.js'></script>
