@@ -42,6 +42,7 @@ module.exports = {
     },
 
     play: function (req, res) {
+		Kinect.startKinect();
       Quiz.findOne({
           id: req.params.id
       }).populate('questions').exec(function (e, r) {

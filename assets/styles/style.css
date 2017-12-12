@@ -83,3 +83,7 @@ input{
   border: 10px inset white;
   padding: 40px;
 }
+
+.handHover{
+  background-color: #f44336;
+}

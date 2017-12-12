@@ -51,6 +51,94 @@
   <div class="col-md-1"></div>
 </div>
 
+<script type="text/javascript" src="/js/dependencies/sails.io.js"></script>
+<script type="text/javascript">
+  io.socket.url = 'http://localhost:1337';
+  /*io.socket.on('bodyFrame', function (bodyFrame){
+    console.log(bodyFrame);
+  });*/
+  io.socket.on('bodyFrame', interpretData);
+    
+    function interpretData(bodyFrame) {
+        
+        var user = bodyFrame.bodies[0];
+	
+        console.log(user);
+        
+        if(user.tracked != false)
+        {
+            var spin = user.joints[1];
+
+            var righHand  = user.joints[11];
+
+            var rightHandState = user.rightHandState;
+
+            var userAnswer = "";
+
+            //console.log(spin);
+            //console.log(righHand);
+
+            //console.log(righHand.depthX);
+            var rightHandPosition = user.joints[11].cameraZ;
+                //console.log("position main : "+rightHandPosition);
+
+            var spinPosition = user.joints[1].cameraZ;
+                //console.log("position spin : "+spinPosition);
+
+            var differenceSpinMain = spinPosition - rightHandPosition;
+
+            if (differenceSpinMain > 0.3)
+                console.log("valide");
+
+            if (differenceSpinMain < 0.3)
+                console.log("non valide");
+
+
+
+            if(righHand.depthX > spin.depthX && righHand.depthY > spin.depthY)
+            {
+                userAnswer = "4";
+            }
+
+            if(righHand.depthX > spin.depthX && righHand.depthY < spin.depthY)
+            {
+                userAnswer = "2";
+            }
+
+            if(righHand.depthX < spin.depthX && righHand.depthY < spin.depthY)
+            {
+                userAnswer = "1";
+            }
+
+            if(righHand.depthX < spin.depthX && righHand.depthY > spin.depthY)
+            {
+                userAnswer = "3";
+            }
+            
+            if(userAnswer != ""){
+                $("#1").removeClass("handHover");
+                $("#2").removeClass("handHover");
+                $("#3").removeClass("handHover");
+                $("#4").removeClass("handHover");
+                $("#"+userAnswer).addClass("handHover");
+            }
+
+            if(differenceSpinMain > 0.4){
+                /*document.getElementById("A").style.backgroundColor = "white";
+                document.getElementById("B").style.backgroundColor = "white";
+                document.getElementById("C").style.backgroundColor = "white";
+                document.getElementById("D").style.backgroundColor = "white";
+
+                var answerButton = document.getElementById(userAnswer);
+                answerButton.style.backgroundColor = "red";*/
+                $(".answer").removeClass("selectedAnswer");
+                $("#"+userAnswer).addClass("selectedAnswer");
+                console.log("reponse "+userAnswer+" validee.")
+            }
+        }
+    }
+</script>
+
 <script type="text/javascript">
 
   function speakText() {
